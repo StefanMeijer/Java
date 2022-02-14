@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=Book
+comment0.text=\r\n\ A\ nice\ book\ to\ read..\r\n\r\n\ @author\ Stefan\ Meijer\r\n\ @version\ 1.0\r\n
+comment1.params=title\ author\ hardcover\ price
+comment1.target=Book(java.lang.String,\ java.lang.String,\ boolean,\ double)
+comment2.params=timesRead
+comment2.target=void\ setTimesRead(int)
+numComments=3

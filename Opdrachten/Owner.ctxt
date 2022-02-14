@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=Owner
+comment0.text=\r\n\ An\ owner\ of\ a\ cat\r\n\r\n\ @author\ Stefan\ Meijer\r\n\ @version\ 1.0\r\n
+comment1.params=name
+comment1.target=Owner(java.lang.String)
+comment2.params=cat
+comment2.target=void\ adoptCat(Cat)
+comment3.params=
+comment3.target=boolean\ hasCat()
+comment4.params=
+comment4.target=void\ pleasure()
+comment5.params=
+comment5.target=boolean\ isHappy()
+comment6.params=
+comment6.target=void\ getCatname()
+comment7.params=name
+comment7.target=void\ setName(java.lang.String)
+comment8.params=
+comment8.target=java.lang.String\ getName()
+numComments=9

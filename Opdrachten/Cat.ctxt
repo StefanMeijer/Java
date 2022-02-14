@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Cat
+comment0.text=\r\n\ A\ hairy\ cat\r\n\r\n\ @author\ Stefan\ Meijer\r\n\ @version\ 1.0\r\n
+comment1.params=name
+comment1.target=Cat(java.lang.String)
+comment2.params=
+comment2.target=void\ pleasure()
+comment3.params=
+comment3.target=boolean\ isHappy()
+comment4.params=name
+comment4.target=void\ setName(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ getName()
+comment6.params=pleasureLevel
+comment6.target=void\ setPleasureLevel(double)
+comment7.params=
+comment7.target=double\ getPleasureLevel()
+numComments=8
