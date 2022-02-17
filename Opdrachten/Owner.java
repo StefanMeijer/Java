@@ -20,11 +20,7 @@ public class Owner {
     }
     
     public boolean hasCat () {
-        if (this.cat != null) {
-            return true;
-        } else {
-           return false; 
-        }
+        return this.cat != null;
     }
     
     public void pleasure () {
