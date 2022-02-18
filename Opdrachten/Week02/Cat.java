@@ -1,3 +1,5 @@
+package Week02;
+
 /**
  * A hairy cat
  *

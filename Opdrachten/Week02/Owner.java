@@ -1,3 +1,5 @@
+package Week02;
+
 /**
  * An owner of a cat
  *
