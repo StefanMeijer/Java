@@ -1,0 +1,12 @@
+#BlueJ class context
+comment0.target=IceClub
+comment0.text=\r\n\ Ice\ club\ membership\ information\r\n\r\n\ @author\ Stefan\ Meijer\r\n\ @version\ 1.0\r\n
+comment1.params=iceClubName
+comment1.target=IceClub(java.lang.String)
+comment2.params=member
+comment2.target=void\ addMembership(Member)
+comment3.params=iceClubName
+comment3.target=void\ setIceClubName(java.lang.String)
+comment4.params=
+comment4.target=java.lang.String\ getIceClubName()
+numComments=5
