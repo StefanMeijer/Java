@@ -3,7 +3,6 @@ package Week03;
 // 0 ( imports
 import java.time.LocalDate;    
 import java.time.format.DateTimeFormatter;
-
 /**
  * Information about a member
  *
@@ -21,8 +20,8 @@ public class Member {
     public Member(String firstname, String lastname, String dateOfBirth, String dayOfRegistration) {
         this.firstname = firstname;
         this.lastname = lastname;
-        this.dateOfBirth = LocalDate.parse(dateOfBirth ,DateTimeFormatter.ofPattern("d/MM/yyyy"));
-        this.dayOfRegistration = LocalDate.parse(dayOfRegistration ,DateTimeFormatter.ofPattern("d/MM/yyyy"));
+        this.dateOfBirth = LocalDate.parse(dateOfBirth); // Example: "2001-12-26"
+        this.dayOfRegistration = LocalDate.parse(dayOfRegistration); // Example: "2001-12-26"
     }
     // 3 ( Methods
     
