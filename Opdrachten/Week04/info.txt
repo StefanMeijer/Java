@@ -1,0 +1,24 @@
+Winkel	KLASSE
+-winkelNaam 	= String
+-orders		= ArrayList<>
+-plaatsOrder	= Methode()
+-orderOphalen	= Methode()
+-verwijderOrders= Methode()
+-waardeOrders	= Methode()
+
+Klant	KLASSE
+-naam 		= String
+-adres 		= String
+-postcode 	= String
+-stad 		= String
+
+Order	KLASSE
+-orderId 	= INT
+-klant 		= Klant klant
+-oderDatum 	= LocalDate
+-producten 	= ArrayList<>
+-serviceKosten 	= double
+
+Product	KLASSE
+-naam		= String
+-prijs		= double
