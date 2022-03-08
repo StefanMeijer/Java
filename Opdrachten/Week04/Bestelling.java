@@ -1,8 +1,9 @@
 package Week04;
+
+// 0 ( Imports
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-// 0 ( Imports
 /**
  * Een bestelling bij een winkeltje
  *
@@ -19,8 +20,9 @@ public class Bestelling
     private double serviceKosten = 2.50;
     
     // 2 ( Constructor
-    public Bestelling (int bestellingId) {
+    public Bestelling (int bestellingId, Klant klant) {
         this.bestellingId = bestellingId;
+        this.klant = klant;
         this.orderdatum = LocalDate.now();
         this.producten = new ArrayList<>();
     }
@@ -61,5 +63,9 @@ public class Bestelling
     
     public double getServiceKosten () {
         return this.serviceKosten;
+    }
+    
+    public ArrayList<Product> getProducten () {
+        return this.producten;
     }
 }

@@ -1,10 +1,12 @@
 #BlueJ class context
 comment0.target=Bestelling
 comment0.text=\r\n\ Een\ bestelling\ bij\ een\ winkeltje\r\n\r\n\ @author\ Stefan\ Meijer\r\n\ @version\ 1.0\r\n
-comment1.params=bestellingId
-comment1.target=Bestelling(int)
+comment1.params=bestellingId\ klant
+comment1.target=Bestelling(int,\ Klant)
 comment10.params=
 comment10.target=double\ getServiceKosten()
+comment11.params=
+comment11.target=java.util.ArrayList\ getProducten()
 comment2.params=product
 comment2.target=void\ addProduct(Product)
 comment3.params=bestellingId
@@ -21,4 +23,4 @@ comment8.params=
 comment8.target=java.time.LocalDate\ getOrderdatum()
 comment9.params=serviceKosten
 comment9.target=void\ setServiceKosten(double)
-numComments=11
+numComments=12
