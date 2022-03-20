@@ -1,0 +1,242 @@
+Atletiekclub
+-naam
+-statestieken ArrayList <statestieken>
++Atletiekclub(String naam)
++krijgClubRecord()
++addStatestiek()
+
+
+Statestiekenregistratie
+-rondeAfstand
+-arraylist Rondetijden<>
+-Atleet atleet
++Statestiekenregistratie(int rondeAfstand)
++rondeToevoegen(tijd)
++berekenTotaleRondesMetTijd()
++berekenTotaleAfstandInKM()
++berekenMaximaleSnelheid()
++berekenTotaleTijd()
++berekenSnelsteRondeTijd()
+
+
+Atleet
+-naam
+-geslacht
+-leeftijd
++Atleet(String naam, String geslact, int leeftijdS)
+
+
+
+
+
+
+
+
+# Startdocument voor de lokale atletiekclub van Emmen
+
+Startdocument van **Stefan Meijer**. Studentnummer **5033454**.
+
+## Probleem beschrijving
+
+De Sperwers, de lokale atletiekclub van Emmen, heeft op dit moment
+een grote papieren administratie van alle PR’s en afstanden van zijn
+atleten. Om van al dit papierwerk af te komen willen ze een simpele
+applicatie die al deze data gaat registeren. Voor elke atleet willen ze
+kunnen zien hoeveel rondjes (een ronde is 400m) de atleet heeft
+gelopen in welke tijd. Ook wil de club weten wie het clubrecord
+heeft: de atleet die het snelste is op de 400 meter. Voor elke atleet
+moet het volgende worden berekend:
+> De totale afstand in km;
+> De gemiddelde tijd per ronde;
+> De maximale snelheid (m/s);
+> De totale tijd die een atleet heeft gelopen.
+De club wil de snelste atleet met zijn of haar snelste rondetijd
+weergeven.
+
+
+
+
+
+### Invoer & uitvoer
+
+In dit gedeelte worden de invoer en uitvoer van de applicatie beschreven.
+
+#### Invoer
+
+In de tabel hieronder worden alle invoeren (die de gebruiker moet invoeren om de applicatie te laten werken) beschreven
+
+|Case|Type|Conditions|
+|----|----|----------|
+|Naam van atletiekclub|`String`|not empty||
+Een atleet|`Atleet` |Atleet|
+|Tijd van een ronde|`String` |Duration format: "PT5M20S"|
+|Naam van een atleet|`String`|not empty|
+|Geslacht van een atleet|`String`|not empty|
+|Geboortedatum van een atleet|`String`|LocalDate format: "2001-12-26"|
+
+#### Uitvoer
+
+|Case|Type|
+|----|----|
+|Atleet met het clubrecord|`Atleet`|
+|Totale rondes met tijd van een atleet|`String`|
+|totale afstand in KM van een atleet|`double`|
+|Gemiddelde tijd per ronde van een atleet|`Duration`|
+|Maximale snelheid van een atleet|`double`|
+|Totale tijd van een atleet|`Duration`|
+|Snelste ronde tijd van een atleet|`Duration`|
+
+#### Berekeningen
+
+| Case              | Berekening                        |
+| ----------------- | ---------------------------------- |
+| Totale rondes met tijd | Loop over ArrayList, tel alle tijden bij elkaar op. En het aantal loops = de aantal rondes|
+| Totale afstand in KM | Loop over ArrayList, het aantal x 400 / 1000 |
+| Gemiddelde tijd per ronde | Loop over ArrayList, tel alle tijden bij elkaar op en deel het over de aantal rondes |
+| Maximale snelheid | Loop over ArrayList, Rondeafstand : tijd (in seconden) x 3,6 |
+| Totale tijd | Loop over ArrayList, tijd += tijd |
+| Snelste ronde tjd | Loop over ArrayList, vergelijk rondetijd met vorige rondetijd, behoud de laagste tijd. |
+
+#### Opmerkingen
+
+* Invoer wordt gevalideerd.
+* De applicatie wordt getest.
+
+## Klassendiagram
+
+![Klassendiagram](./klassediagram.png "First Version of the class diagram")
+
+
+
+
+
+
+
+## Testplan
+
+In deze sectie zullen de test cases beschreven worden om te applicatie te testen.
+
+### Test Data
+
+In de onderstaande tabel vindt je alle data dat nodig is voor het testen.
+
+#### Atletiekclub
+
+| ID            | Input                             | Code                              |
+| ------------- | --------------------------------- | --------------------------------- |
+| `naam` | De Sperwers | `new Atletiekclub("De Sperwers")` |
+
+#### Statestiekenregistratie
+
+| ID        | Input                                                        | Code                                               |
+| --------- | ------------------------------------------------------------ | -------------------------------------------------- |
+| `Atleet`     | atleet1 | `new Statestiekenregistratie(atleet1)`                  |
+| `Atleet` | atleet2 | `new Statestiekenregistratie(atleet2)` |
+| `Tijd atleet1` | PT4M20S | `rondeToevoegen("PT4M20S")` |
+| `Tijd atleet2` | PT3M20S | `rondeToevoegen("PT3M20S")` |
+
+#### Atleet
+
+| ID           | Input | Code          |
+| ------------ | ----- | ------------- |
+| `Atleet` | Stefan, Man, 2001-12-26    | `new Atleet(Stefan, Man, "2001-12-26")` |
+| `Atleet` | Felix, Vrouw, 1993-02-10    | `new Atleet(Felix, Vrouw, "1993-02-10")` |
+
+#### Bijvoegen Statestiekenregistraties bij Statestieken
+
+| ID        | Code                      |
+| ------------ | ------------------------- |
+| `Statestiekenregistratie1` | `addStatestiek(Statestiekenregistratie1)`        |
+
+
+
+
+
+### Test Cases
+
+In deze sectie zullen de test cases beschreven worden. Elke test case zou moeten worden uitgevoerd met de test data als start punt.
+
+#### #1 Krijg het club record
+
+Testen of we de atleet krijgen die het clubrecord heeft.
+
+|Step|Input|Action|Expected output|
+|----|-----|------|---------------|
+|1| 400, Atleet1 | ``new Statestiekenregistratie(400, Atleet1)``||
+|2| 400, Atleet2 | ``new Statestiekenregistratie(400, Atleet2)``||
+|3| Statestiekenregistratie1  | `rondeToevoegen("PT4M20S")`  ||
+|4|  | `krijgClubRecord()` |Atleet1|
+|5| Statestiekenregistratie2 | `rondeToevoegen("PT3M20S")`  ||
+|6|  | `krijgClubRecord()` |Atleet2|
+
+#### #2 Bereken totale ronden met tijd
+
+Testen of de totale rondes met tijd van een atleet wordt weergeven.
+
+|Step|Input|Action|Expected output|
+|----|-----|------|---------------|
+|1|400, Atleet1 | ``new Statestiekenregistratie(400, Atleet1)``||
+|2| Statestiekenregistratie1  | `rondeToevoegen("PT4M20S")`  ||
+|3||`berekenTotaleRondesMetTijd()`| 1 ronde(s), PT4M20S |
+|4| Statestiekenregistratie1 | `rondeToevoegen("PT3M20S")`  ||
+|5||`berekenTotaleRondesMetTijd()`| 2 ronde(s), PT7M40S |
+
+#### #3 Bereken totale afstand in KM van een atleet
+
+Testen of de totale afstand in KM van een atleet wordt weergeven.
+
+|Step|Input|Action|Expected output|
+|----|-----|------|---------------|
+|1|400, Atleet1 | ``new Statestiekenregistratie(400, Atleet1)``||
+|2| Statestiekenregistratie1  | `rondeToevoegen("PT4M20S")`  ||
+|3||`berekenTotaleAfstandInKM()`| 0,4 |
+|4| Statestiekenregistratie1 | `rondeToevoegen("PT3M20S")`  ||
+|5||`berekenTotaleAfstandInKM()`| 0,8 |
+
+#### #4 Bereken gemiddele tijd per ronde
+
+Testen of de gemiddelde tijd per ronde van een atleet wordt weergeven.
+
+|Step|Input|Action|Expected output|
+|----|-----|------|---------------|
+|1|400, Atleet1 | ``new Statestiekenregistratie(400, Atleet1)``||
+|2| Statestiekenregistratie1  | `rondeToevoegen("PT4M20S")`  ||
+|3||`berekenGemiddeldeTijdPerRonde()`| PT4M20S |
+|4| Statestiekenregistratie1 | `rondeToevoegen("PT3M20S")`  ||
+|5||`berekenGemiddeldeTijdPerRonde()`| PT3M50S |
+
+#### #5 Bereken maximale snelheid
+
+Testen of de maximale snelheid van een atleet wordt weergeven.
+
+|Step|Input|Action|Expected output|
+|----|-----|------|---------------|
+|1|400, Atleet1 | ``new Statestiekenregistratie(400, Atleet1)``||
+|2| Statestiekenregistratie1  | `rondeToevoegen("PT4M20S")`  ||
+|3||`berekenMaximaleSnelheid()`| 18 |
+|4| Statestiekenregistratie1 | `rondeToevoegen("PT0M60S")`  ||
+|5||`berekenMaximaleSnelheid()`| 24 |
+
+#### #6 Bereken totale tijd
+
+Testen of de totale tijd van een atleet wordt weergeven.
+
+|Step|Input|Action|Expected output|
+|----|-----|------|---------------|
+|1|400, Atleet1 | ``new Statestiekenregistratie(400, Atleet1)``||
+|2| Statestiekenregistratie1  | `rondeToevoegen("PT4M20S")`  ||
+|3||`berekenTotaleTijd()`|PT4M20S|
+|4| Statestiekenregistratie1 | `rondeToevoegen("PT0M60S")`  ||
+|5||`berekenTotaleTijd()`|PT5M0S|
+
+#### #7 Bereken snelste rondetijd
+
+Testen of de snelste rondetijd van een atleet wordt weergeven.
+
+|Step|Input|Action|Expected output|
+|----|-----|------|---------------|
+|1|400, Atleet1 | ``new Statestiekenregistratie(400, Atleet1)``||
+|2| Statestiekenregistratie1  | `rondeToevoegen("PT4M20S")`  ||
+|3||`berekenSnelsteRondeTijd()`|PT4M20S
+|4| Statestiekenregistratie1 | `rondeToevoegen("PT1M0S")`  ||    
+|5||`berekenSnelsteRondeTijd()`|PT1M0S|

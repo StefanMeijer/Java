@@ -10,8 +10,7 @@ import java.util.ArrayList;
  * @author Stefan Meijer
  * @version 1.0
  */
-public class Bestelling
-{
+public class Bestelling {
     // 1 ( Fields
     private int bestellingId;
     private Klant klant;

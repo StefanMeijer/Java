@@ -1,0 +1,7 @@
+invoer: conditions - duration format / geboortedatum format
+
+berekeningen:  gemiddelde tijd/  totale tijd etc..
+
+klassendiagram: pijltje moet normaal worden
+
+Testplan: concrete output, meerdere stappen

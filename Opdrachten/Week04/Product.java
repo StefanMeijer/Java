@@ -7,8 +7,7 @@ package Week04;
  * @author Stefan Meijer
  * @version 1.0
  */
-public class Product
-{
+public class Product {
     // 1 ( Fields
     private String productnaam;
     private double prijs;

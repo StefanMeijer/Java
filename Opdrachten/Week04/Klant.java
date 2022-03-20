@@ -7,8 +7,7 @@ package Week04;
  * @author Stefan Meijer
  * @version 1.0
  */
-public class Klant
-{
+public class Klant {
     // 1 ( Fields
     private String klantnaam;
     private String adres;
