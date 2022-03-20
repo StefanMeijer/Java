@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=Atleet
+comment0.text=\r\n\ Informatie\ van\ een\ Atleet.\r\n\r\n\ @author\ Stefan\ Meijer\r\n\ @version\ 1.0\r\n
+comment1.params=naam\ geslacht\ geboortedatum
+comment1.target=Atleet(java.lang.String,\ java.lang.String,\ java.lang.String)
+comment2.params=naam
+comment2.target=void\ setNaam(java.lang.String)
+comment3.params=
+comment3.target=java.lang.String\ getNaam()
+comment4.params=geslacht
+comment4.target=void\ setGeslacht(java.lang.String)
+comment5.params=
+comment5.target=java.lang.String\ getGeslacht()
+comment6.params=geboortedatum
+comment6.target=void\ setGeboortedatum(java.lang.String)
+comment7.params=
+comment7.target=java.time.LocalDate\ getGeboortedatum()
+numComments=8
