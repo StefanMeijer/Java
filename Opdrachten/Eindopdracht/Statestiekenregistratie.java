@@ -53,7 +53,16 @@ public class Statestiekenregistratie {
     }
     
     public Duration berekenSnelsteRondeTijd () {
-        return null;
+        Duration lowest = Duration.parse("P1DT0H0M0S"); //Put highest time possible = 1 day
+        for (Duration tijd : this.rondeTijden) {
+            int comparedTime = tijd.compareTo(lowest);
+            
+            //1 = higher, 0 = equal, -1 is lower
+            if (comparedTime == -1) {
+                lowest = tijd;
+            }
+        }
+        return lowest;
     }
     
     // 4 ( Getters & Setters
