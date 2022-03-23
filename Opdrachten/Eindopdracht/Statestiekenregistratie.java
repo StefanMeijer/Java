@@ -28,7 +28,7 @@ public class Statestiekenregistratie {
         rondeTijden.add(Duration.parse(tijd));
     }
     
-    public String berekenTotaleRondesMetRijd () {
+    public String berekenTotaleRondesMetTijd () {
         return "";
     }
     
@@ -49,7 +49,12 @@ public class Statestiekenregistratie {
     }
     
     public Duration berekenTotaletijd () {
-        return null;
+        long seconds = 0;
+        for (Duration tijd : this.rondeTijden) {
+            seconds += tijd.toSeconds();
+        }
+        Duration totaleTijd = Duration.parse("PT" + seconds + "S"); // Put total amount of seconds to duration format
+        return totaleTijd;
     }
     
     public Duration berekenSnelsteRondeTijd () {
