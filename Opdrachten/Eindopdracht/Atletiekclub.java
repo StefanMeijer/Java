@@ -17,6 +17,7 @@ public class Atletiekclub {
     // 2 ( Constructor
     public Atletiekclub(String naam) {
         this.naam = naam;
+        this.statestiekenregistratie = new ArrayList<>();
     }
 
     // 3 ( Methods

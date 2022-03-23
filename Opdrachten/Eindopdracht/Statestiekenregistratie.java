@@ -20,11 +20,12 @@ public class Statestiekenregistratie {
     public Statestiekenregistratie(Atleet atleet) {
         this.rondeAfstand = 400;
         this.atleet = atleet;
+        this.rondeTijden = new ArrayList<>();
     }
     
     // 3 ( Methods
-    public void rondeToevoegen () {
-        
+    public void rondeToevoegen (String tijd) {
+        rondeTijden.add(Duration.parse(tijd));
     }
     
     public String berekenTotaleRondesMetRijd () {
@@ -32,7 +33,11 @@ public class Statestiekenregistratie {
     }
     
     public double berekenTotaleAfstandInKM () {
-        return 0.0;
+        double totaleAfstand = 0.0;
+        for (Duration duration : this.rondeTijden) {
+            totaleAfstand += 0.4;
+        }
+        return totaleAfstand;
     }
     
     public Duration berekenGemiddeldeTijdPerRonde () {

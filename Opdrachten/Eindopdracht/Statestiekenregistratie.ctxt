@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Statestiekenregistratie
-comment0.text=\r\n\ Informatie\ van\ statestiekenregistratie(s)\ van\ een\ atleet.\r\n\r\n\ @author\ Stefan\ Meijer\r\n\ @version\ 1.0\r\n
+comment0.text=\r\n\ Informatie\ van\ statestiekenregistratie\ van\ een\ atleet.\r\n\r\n\ @author\ Stefan\ Meijer\r\n\ @version\ 1.0\r\n
 comment1.params=atleet
 comment1.target=Statestiekenregistratie(Atleet)
 comment10.params=
@@ -11,8 +11,8 @@ comment12.params=atleet
 comment12.target=void\ setAtleet(Atleet)
 comment13.params=
 comment13.target=Atleet\ getAtleet()
-comment2.params=
-comment2.target=void\ rondeToevoegen()
+comment2.params=tijd
+comment2.target=void\ rondeToevoegen(java.lang.String)
 comment3.params=
 comment3.target=java.lang.String\ berekenTotaleRondesMetRijd()
 comment4.params=
