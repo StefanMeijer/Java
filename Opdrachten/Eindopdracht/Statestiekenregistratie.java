@@ -29,7 +29,13 @@ public class Statestiekenregistratie {
     }
     
     public String berekenTotaleRondesMetTijd () {
-        return "";
+        int aantalRondes = 0;
+        
+        for (Duration tijd : this.rondeTijden) {
+            aantalRondes++;
+        }
+        
+        return "Aantal rondes: " + aantalRondes +" Totale tijd: " + this.berekenTotaletijd() + "";
     }
     
     public double berekenTotaleAfstandInKM () {
@@ -41,7 +47,7 @@ public class Statestiekenregistratie {
     }
     
     public Duration berekenGemiddeldeTijdPerRonde () {
-        return null;
+       return null;
     }
     
     public double berekenMaximaleSnelheid () {
@@ -49,11 +55,12 @@ public class Statestiekenregistratie {
     }
     
     public Duration berekenTotaletijd () {
-        long seconds = 0;
+        Duration totaleTijd = Duration.ZERO;
         for (Duration tijd : this.rondeTijden) {
-            seconds += tijd.toSeconds();
+            totaleTijd = totaleTijd.plus(tijd);
         }
-        Duration totaleTijd = Duration.parse("PT" + seconds + "S"); // Put total amount of seconds to duration format
+        
+        System.out.println(totaleTijd);
         return totaleTijd;
     }
     
