@@ -47,11 +47,30 @@ public class Statestiekenregistratie {
     }
     
     public Duration berekenGemiddeldeTijdPerRonde () {
-       return null;
+        long aantalRondes = 0;
+        
+        for (Duration tijd : this.rondeTijden) {
+            aantalRondes++;
+        }
+        
+        Duration average = this.berekenTotaletijd().dividedBy(aantalRondes);
+        
+        return average;
     }
     
     public double berekenMaximaleSnelheid () {
-        return 0.0;
+        double maxSnelheid = 0.0;
+        
+        for (Duration tijd : this.rondeTijden) {
+            double rondeAfstand = this.getRondeAfstand(); // Put `rondeAfstand` to double
+            double rondeTijd = tijd.toSeconds(); // Put `tijd` to double
+            double snelheid = rondeAfstand / rondeTijd * 3.6; // Calculate speed in KM/H
+            maxSnelheid = Math.max(snelheid, maxSnelheid); // Check what speed is higher, set highest speed
+            
+            System.out.println(maxSnelheid);
+        }
+        
+        return maxSnelheid;
     }
     
     public Duration berekenTotaletijd () {
@@ -60,7 +79,6 @@ public class Statestiekenregistratie {
             totaleTijd = totaleTijd.plus(tijd);
         }
         
-        System.out.println(totaleTijd);
         return totaleTijd;
     }
     
