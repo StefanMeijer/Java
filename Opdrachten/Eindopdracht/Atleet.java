@@ -16,7 +16,7 @@ public class Atleet {
     private LocalDate geboortedatum;
 
     // 2 ( Constructor
-    public Atleet(String naam, String geslacht, String geboortedatum) {
+    public Atleet (String naam, String geslacht, String geboortedatum) {
         this.naam = naam;
         this.geslacht = geslacht;
         this.geboortedatum = LocalDate.parse(geboortedatum);

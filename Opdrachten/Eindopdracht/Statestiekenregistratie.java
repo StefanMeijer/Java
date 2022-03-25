@@ -17,7 +17,7 @@ public class Statestiekenregistratie {
     private Atleet atleet;
     
     // 2 ( Constructor
-    public Statestiekenregistratie(Atleet atleet) {
+    public Statestiekenregistratie (Atleet atleet) {
         this.rondeAfstand = 400;
         this.atleet = atleet;
         this.rondeTijden = new ArrayList<>();
@@ -65,9 +65,8 @@ public class Statestiekenregistratie {
             double rondeAfstand = this.getRondeAfstand(); // Put `rondeAfstand` to double
             double rondeTijd = tijd.toSeconds(); // Put `tijd` to double
             double snelheid = rondeAfstand / rondeTijd * 3.6; // Calculate speed in KM/H
-            maxSnelheid = Math.max(snelheid, maxSnelheid); // Check what speed is higher, set highest speed
             
-            System.out.println(maxSnelheid);
+            maxSnelheid = Math.max(snelheid, maxSnelheid); // Check what speed is higher, set highest speed
         }
         
         return maxSnelheid;
