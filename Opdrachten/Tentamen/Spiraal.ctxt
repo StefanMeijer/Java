@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Spiraal
+comment0.text=\r\n\ Een\ spiraal\ met\ snacks\r\n\r\n\ @author\ Stefan\ Meijer\r\n\ @version\ 1.0\r\n
+comment1.params=code
+comment1.target=Spiraal(int)
+comment2.params=snack
+comment2.target=void\ snackToevoegen(Snack)
+comment3.params=code
+comment3.target=void\ setCode(int)
+comment4.params=
+comment4.target=int\ getCode()
+comment5.params=
+comment5.target=java.util.ArrayList\ getSnacks()
+comment6.params=
+comment6.target=int\ getAantalSnacks()
+numComments=7
